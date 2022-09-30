@@ -1,0 +1,118 @@
+<div class="container w-50">
+  <!--begin::Heading-->
+  <div class="text-center mb-11">
+    <!--begin::Title-->
+    <h1 class="text-dark fw-bolder mb-3">Add Customer</h1>
+    <!--end::Title-->
+
+    <!--end::Subtitle--->
+  </div>
+  <!--begin::Heading-->
+
+  <div class="text-gray-800 fw-semibold fs-1">General</div>
+  <div class="separator my-5 border-secondary"></div>
+
+  <form [formGroup]="createCustomerForm" (ngSubmit)="submit()">
+    {{ createCustomerForm.value | json }}
+    <!--begin::Form group-->
+    <div class="fv-row mb-8">
+      <label class="form-label fw-bolder text-dark fs-6">Name</label>
+      <input class="form-control bg-transparent" type="text" name="name" formControlName="name" placeholder="Name"
+        autocomplete="off" />
+    </div>
+    <!--end::Form group-->
+
+    <!--begin::Form group-->
+    <div class="row mb-8">
+      <div class="col-6">
+        <label class="form-label fw-bolder text-dark fs-6">Email</label>
+        <input class="form-control bg-transparent" type="email" placeholder="Email" name="email" formControlName="email"
+          autocomplete="off" />
+      </div>
+      <div class="col-6">
+        <label class="form-label fw-bolder text-dark fs-6">Phone</label>
+        <input class="form-control bg-transparent" type="text" placeholder="Phone" name="email" formControlName="phone"
+          autocomplete="off" />
+      </div>
+    </div>
+
+    <div class="row mb-18">
+      <div class="col-6">
+        <label class="form-label fw-bolder text-dark fs-6">Website</label>
+        <input class="form-control bg-transparent" type="text" placeholder="Website" name="website"
+          formControlName="website" autocomplete="off" />
+      </div>
+      <div class="col-6">
+        <label class="form-label fw-bolder text-dark fs-6">Reference</label>
+        <input class="form-control bg-transparent" type="text" placeholder="Reference" name="reference"
+          formControlName="reference" autocomplete="off" />
+      </div>
+    </div>
+
+    <div class="text-gray-800 fw-semibold fs-1">Billing</div>
+    <div class="separator my-5 border-secondary"></div>
+
+    <div class="row mb-18">
+      <div class="col-6">
+        <label class="form-label fw-bolder text-dark fs-6">GST</label>
+        <input class="form-control bg-transparent" type="text" placeholder="GST Number" name="gstNumber"
+          formControlName="gstNumber" autocomplete="off" />
+      </div>
+      <div class="col-6">
+        <label class="form-label fw-bolder text-dark fs-6">Currency</label>
+        <input class="form-control bg-transparent" type="text" placeholder="Currency" name="currency"
+          autocomplete="off" />
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <div class="text-gray-800 fw-semibold fs-1">Address</div>
+      <button type="button" class="btn btn-primary" (click)="open()">
+        Add
+      </button>
+    </div>
+    <div class="separator my-5 border-secondary"></div>
+
+    <div formArrayName="addresses">
+      <div class="row">
+        <div class="col-12">
+          <table class="table ">
+            <thead class="fw-bolder text-dark fs-5">
+              <tr class="d-flex">
+                <th class="col" scope="col">#</th>
+                <th class="col-2" scope="col">Address</th>
+                <th class="col-2" scope="col">City</th>
+                <th class="col-2" scope="col">Pin Code</th>
+                <th class="col-2" scope="col">State</th>
+                <th class="col-2" scope="col">Country</th>
+                <th class="col-2" scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody class=" text-dark fs-5 ">
+              <tr class="d-flex" style="width: 50vw;" *ngFor="let addr of addresses().controls; let i = index"
+                [formGroupName]="i">
+                <th class="col fw-bolder" scope="row">{{ i + 1 }}</th>
+                <td class="col-2 text-truncate">{{ addr.value.address }}</td>
+                <td class="col-2 text-truncate">{{ addr.value.city }}</td>
+                <td class="col-2 text-truncate">{{ addr.value.pinCode }}</td>
+                <td class="col-2 text-truncate">{{ addr.value.state }}</td>
+                <td class="col-2 text-truncate">{{ addr.value.country }}</td>
+                <td class="col-2">
+                  <span role="button">
+                    <i class="bi bi-pencil text-muted h2 me-3" (click)="editAddress(addr,i)"></i>
+                    <i class="bi bi-x text-muted h1" (click)="removeAddress(i)"></i>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-10 float-end">
+      <button type="button" class="btn btn-secondary">Cancel</button>
+      <button type="submit" class="btn btn-primary ms-3">Submit</button>
+    </div>
+  </form>
+</div>
