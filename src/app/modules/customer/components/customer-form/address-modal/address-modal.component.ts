@@ -9,6 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AddressModalComponent implements OnInit {
   addressForm: FormGroup;
+  @Output() emitService: EventEmitter<any> = new EventEmitter();
   constructor(public activeModal: NgbActiveModal, private _fb: FormBuilder) {}
 
   close() {
@@ -30,6 +31,8 @@ export class AddressModalComponent implements OnInit {
     });
   }
   submit() {
+    this.emitService.next(this.addressForm.value);
+
     this.activeModal.close(this.addressForm.value);
   }
 

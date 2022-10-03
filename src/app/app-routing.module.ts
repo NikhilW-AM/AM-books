@@ -27,6 +27,13 @@ export const routes: Routes = [
         (m) => m.CustomerModule
       ),
   },
+  {
+    path: 'wizard',
+    loadChildren: () =>
+      import('./modules/wizards/wizards.module').then(
+        (m) => m.WizardsModule
+      ),
+  },
   { path: '**', redirectTo: 'error/404' },
 ];
 

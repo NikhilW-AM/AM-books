@@ -1,118 +1,169 @@
-<div class="container w-50">
-  <!--begin::Heading-->
-  <div class="text-center mb-11">
-    <!--begin::Title-->
-    <h1 class="text-dark fw-bolder mb-3">Add Customer</h1>
-    <!--end::Title-->
+<div>
+  <div class="card" style="width:50rem;">
+    <div class="card-body">
+      <div id="kt_create_account_stepper" class="stepper stepper-links d-flex flex-column">
+        <form novalidate="" id="kt_create_account_form" class="mx-auto mw-600px w-100 ">
+          <div class="pb-10 pb-lg-12">
+            <h2 class="fw-bolder text-dark">General</h2> 
+          </div>
+          <div class="current">
+            <div class="ng-untouched ng-pristine ng-valid">
+              <div class="fv-row mb-10">
+                <label class="form-label required">Name</label>
+                <input
+                  placeholder="Name" 
+                  name="businessName"
+                  formcontrolname="businessName"
+                  class="form-control form-control-lg form-control-solid ng-dirty ng-invalid ng-touched" />
+                <!---->
+              </div>
+              <div class="row mb-10">
+                <div class="col-6">
+                  <label class="form-label required">Email</label><input name="businessName"
+                  placeholder="Email"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label required">Phone</label><input name="businessName"
+                  placeholder="Phone"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
 
-    <!--end::Subtitle--->
+
+                <!---->
+              </div>
+              <div class="row mb-10">
+                <div class="col-6">
+                  <label class="form-label required">Website</label><input name="businessName"
+                  placeholder="Website"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label required">Reference</label><input name="businessName"
+                  placeholder="Reference"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+              </div>
+
+              <div class="pb-10 pb-lg-12">
+                <h2 class="fw-bolder text-dark">Billing</h2> 
+              </div>
+              <div class="row mb-10">
+                <div class="col-6">
+                  <label class="form-label required">Tax Number</label><input name="businessName"
+                  placeholder="GST Number"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label required">Currency</label><input name="businessName"
+                  placeholder="Currency"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+              </div>
+
+              <div class="pb-10 pb-lg-12">
+                <h2 class="fw-bolder text-dark">Address</h2> 
+              </div>
+            </div>
+          </div>
+
+          <div class="card border border-1">
+            <h2 class="card-header d-flex align-items-center">
+              Address
+            </h2>
+            <div class="card-body">
+              <div class="fv-row mb-5">
+                <label class="form-label required">Address</label>
+                <textarea
+                  placeholder="Address" 
+                  name="businessName"
+                  formcontrolname="businessName"
+                  class="form-control form-control-lg form-control-solid ng-dirty ng-invalid ng-touched" rows="2"></textarea>
+                <!---->
+              </div>
+              <div class="row mb-5">
+                <div class="col-6">
+                  <label class="form-label required">City</label><input name="businessName"
+                  placeholder="City"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label required">Pin Code</label><input name="businessName"
+                  placeholder="Pin Code"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+
+
+                <!---->
+              </div>
+              <div class="row mb-5">
+                <div class="col-6">
+                  <label class="form-label required">State</label><input name="businessName"
+                  placeholder="State"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+                <div class="col-6">
+                  <label class="form-label required">Country</label>
+                  <input name="businessName"
+                  placeholder="Country"
+                    formcontrolname="businessName"
+                    class="form-control form-control-lg form-control-solid ng-untouched ng-pristine ng-valid" />
+                </div>
+
+
+                <!---->
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-stack pt-15">
+            <div class="mr-2">
+              <button type="button" class="btn btn-lg btn-light-primary me-3">
+                <span class="svg-icon svg-icon-4 me-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor"></rect>
+                    <path
+                      d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z"
+                      fill="currentColor"></path>
+                  </svg></span>
+                <!---->
+                Back
+              </button>
+              <!---->
+              <!---->
+            </div>
+            <div>
+              <button type="button" class="btn btn-lg btn-primary me-3">
+                <span class="indicator-label">
+                  Continue
+                  <span class="svg-icon svg-icon-3 ms-2 me-0"><svg width="24" height="24" viewBox="0 0 24 24"
+                      fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)"
+                        fill="currentColor"></rect>
+                      <path
+                        d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z"
+                        fill="currentColor"></path>
+                    </svg></span>
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                </span>
+              </button>
+            </div>
+            <!---->
+            <!---->
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <!--begin::Heading-->
-
-  <div class="text-gray-800 fw-semibold fs-1">General</div>
-  <div class="separator my-5 border-secondary"></div>
-
-  <form [formGroup]="createCustomerForm" (ngSubmit)="submit()">
-    {{ createCustomerForm.value | json }}
-    <!--begin::Form group-->
-    <div class="fv-row mb-8">
-      <label class="form-label fw-bolder text-dark fs-6">Name</label>
-      <input class="form-control bg-transparent" type="text" name="name" formControlName="name" placeholder="Name"
-        autocomplete="off" />
-    </div>
-    <!--end::Form group-->
-
-    <!--begin::Form group-->
-    <div class="row mb-8">
-      <div class="col-6">
-        <label class="form-label fw-bolder text-dark fs-6">Email</label>
-        <input class="form-control bg-transparent" type="email" placeholder="Email" name="email" formControlName="email"
-          autocomplete="off" />
-      </div>
-      <div class="col-6">
-        <label class="form-label fw-bolder text-dark fs-6">Phone</label>
-        <input class="form-control bg-transparent" type="text" placeholder="Phone" name="email" formControlName="phone"
-          autocomplete="off" />
-      </div>
-    </div>
-
-    <div class="row mb-18">
-      <div class="col-6">
-        <label class="form-label fw-bolder text-dark fs-6">Website</label>
-        <input class="form-control bg-transparent" type="text" placeholder="Website" name="website"
-          formControlName="website" autocomplete="off" />
-      </div>
-      <div class="col-6">
-        <label class="form-label fw-bolder text-dark fs-6">Reference</label>
-        <input class="form-control bg-transparent" type="text" placeholder="Reference" name="reference"
-          formControlName="reference" autocomplete="off" />
-      </div>
-    </div>
-
-    <div class="text-gray-800 fw-semibold fs-1">Billing</div>
-    <div class="separator my-5 border-secondary"></div>
-
-    <div class="row mb-18">
-      <div class="col-6">
-        <label class="form-label fw-bolder text-dark fs-6">GST</label>
-        <input class="form-control bg-transparent" type="text" placeholder="GST Number" name="gstNumber"
-          formControlName="gstNumber" autocomplete="off" />
-      </div>
-      <div class="col-6">
-        <label class="form-label fw-bolder text-dark fs-6">Currency</label>
-        <input class="form-control bg-transparent" type="text" placeholder="Currency" name="currency"
-          autocomplete="off" />
-      </div>
-    </div>
-
-    <div class="d-flex justify-content-between">
-      <div class="text-gray-800 fw-semibold fs-1">Address</div>
-      <button type="button" class="btn btn-primary" (click)="open()">
-        Add
-      </button>
-    </div>
-    <div class="separator my-5 border-secondary"></div>
-
-    <div formArrayName="addresses">
-      <div class="row">
-        <div class="col-12">
-          <table class="table ">
-            <thead class="fw-bolder text-dark fs-5">
-              <tr class="d-flex">
-                <th class="col" scope="col">#</th>
-                <th class="col-2" scope="col">Address</th>
-                <th class="col-2" scope="col">City</th>
-                <th class="col-2" scope="col">Pin Code</th>
-                <th class="col-2" scope="col">State</th>
-                <th class="col-2" scope="col">Country</th>
-                <th class="col-2" scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody class=" text-dark fs-5 ">
-              <tr class="d-flex" style="width: 50vw;" *ngFor="let addr of addresses().controls; let i = index"
-                [formGroupName]="i">
-                <th class="col fw-bolder" scope="row">{{ i + 1 }}</th>
-                <td class="col-2 text-truncate">{{ addr.value.address }}</td>
-                <td class="col-2 text-truncate">{{ addr.value.city }}</td>
-                <td class="col-2 text-truncate">{{ addr.value.pinCode }}</td>
-                <td class="col-2 text-truncate">{{ addr.value.state }}</td>
-                <td class="col-2 text-truncate">{{ addr.value.country }}</td>
-                <td class="col-2">
-                  <span role="button">
-                    <i class="bi bi-pencil text-muted h2 me-3" (click)="editAddress(addr,i)"></i>
-                    <i class="bi bi-x text-muted h1" (click)="removeAddress(i)"></i>
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="mb-10 float-end">
-      <button type="button" class="btn btn-secondary">Cancel</button>
-      <button type="submit" class="btn btn-primary ms-3">Submit</button>
-    </div>
-  </form>
 </div>

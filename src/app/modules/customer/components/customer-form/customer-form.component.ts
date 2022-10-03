@@ -12,6 +12,7 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CustomerFormComponent implements OnInit {
   createCustomerForm: FormGroup;
+  addressForm:any
   modalRef: any;
 
   constructor(
@@ -24,14 +25,21 @@ export class CustomerFormComponent implements OnInit {
   }
 
   open() {
-    this.modalRef = this.modalService
+    const modalRef = this.modalService
       .open(AddressModalComponent, { centered: true })
-      .result.then(
-        (result) => {
-          if (result) this.addAdderess(result);
-        },
-        (reason) => {}
-      );
+    //   .result.then(
+    //     (result) => {
+    //       //console.log(result)
+    //       //if (result) this.addAdderess(result);
+    //       this.addressForm = result
+    //     },
+    //     (reason) => {}
+    // );
+   
+    modalRef.componentInstance.emitService.subscribe((emmitedValue:any) => {
+      //console.log(this.newAddress(emmitedValue))
+      this.addresses().push(this.newAddress(emmitedValue));
+  });
   }
 
   ngOnInit(): void {
@@ -50,12 +58,15 @@ export class CustomerFormComponent implements OnInit {
     });
   }
 
+
   addresses(): FormArray {
+    console.log('k')
     return this.createCustomerForm.get('addresses') as FormArray;
   }
 
-  newAddress(addressObj: any): FormGroup {
-    let { address, city, pinCode, state, country } = addressObj;
+  newAddress(emmitedValue: any): FormGroup {
+    console.log(emmitedValue)
+    let { address, city, pinCode, state, country } = emmitedValue;
     return this._fb.group({
       address: address,
       city: city,
@@ -65,8 +76,8 @@ export class CustomerFormComponent implements OnInit {
     });
   }
 
-  addAdderess(addressObj: any) {
-    this.addresses().push(this.newAddress(addressObj));
+  addAdderess(emmitedValue:any) {
+    this.addresses().push(this.newAddress(emmitedValue));
   }
 
   removeAddress(i: number) {
@@ -74,7 +85,7 @@ export class CustomerFormComponent implements OnInit {
   }
 
   editAddress(address: any, index: number) {
-    console.log(address.value);
+    //console.log(address.value);
     this.addresses().at(index).patchValue(address);
   }
 
